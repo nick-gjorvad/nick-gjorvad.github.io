@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1 style="text-align:center;">Weekly Assignment 7</h1>
+</head>
+<style>
+.font_size {
+  font-size: 30px;
+}	
+</style>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+
+<p><b class="font_size">Version 1</b></p>
+<canvas id="v1" width="200" height="200"></canvas>
+<script>
+var ctx1 = document.getElementById('v1').getContext('2d');
+var myChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Lego Sets', 'Clothes', 'Food', 'Toiletries'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 4, 39, 18],
+            backgroundColor: [
+                
+            ],
+            borderColor: [
+                
+                
+            ],
+            
+        }]
+    },
+    
+});
+</script>
+
+
+
+
+<p><b class="font_size">Version 2</b></p>
+<canvas id="v2" width="400" height="400"></canvas>
+<script>
+
+var ctx2 = document.getElementById('v2').getContext('2d');
+var myChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: ['Lego Sets', 'Clothes', 'Food', 'Toiletries'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 4, 39, 18],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+              
+                
+            ],
+            borderColor: [
+                
+                
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'What Have I Purchased In The Last Month'
+        }    
+    }
+});
+</script>
+<p><b class="font_size">Improvements</b></p>
+<p>I improved my bar graph from version 1 by adding a y axis, title, and the overall scaling of the graph itself. I did these things by adding the yAxis function, the "title" function, and the beginAtZero function to have the graph start at 0 instead of 12. </p>
+
+
+<p><b class="font_size">Version 3</b></p>
+<canvas id="v3" width="400" height="400"></canvas>
+<script>
+var ctx3 = document.getElementById('v3').getContext('2d');
+var myChart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ['Lego Sets', 'Clothes', 'Food', 'Toiletries'],
+        datasets: [{
+        	label: '# of Votes',
+            data: [12, 4, 39, 18],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    	
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                        display: true,
+                        labelString: '# Items Purchased'
+                    }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                        display: true,
+                        labelString: 'Name of Items Purchased'
+                    }
+            }],
+        },
+        title: {
+            display: true,
+            text: 'What Have I Purchased In The Last Month'
+        },
+
+    }
+});
+</script>
+<p><b class="font_size">Improvements</b></p>
+<p>I improved my bar graph from version 2 by adding different colors to each bar, added an x axis, and a tooltip function that allows you to hover over each bar and it will display the amount of votes cast for each bar. I did all of this by adding the xAxis function, adding the backgroundColor and BorderColor functions, and by adding in the hover tooltip function. </p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
