@@ -1,47 +1,55 @@
-<h1>Weekly Assignment 8</h1>
-<canvas id="v1" width="100" height="50"></canvas>
+
+<canvas id="myChart"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
-
 <script type="text/javascript">
 
-// $.getJSON("wa8.json", function(data_from_file){ //
-
-    // console.log("hey you got data")
-    //console.log(data_from_file)
+$.getJSON("wa8.json", function(data_from_file){
 
     var ctx = document.getElementById('myChart').getContext('2d');
+    console.log("hey you got data")
+    console.log(data_from_file)
+
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'pie',
-        data = {
-            datasets: [{
-            data: [10, 20, 30]
-    }],
+
         // The data for our dataset
-        //data: {
-             //labels: ['Sum of vehicular stops', 'Total arrests', 'Average of vehicular stops'],
-            
-            //datasets: [{
-                //data: [12, 4, 39],
-                //label: 'Vehicular Stops Made By Police',
-                //backgroundColor: ['rgb(255, 99, 132)',
-                //'rgba(54, 162, 235, 0.2)',
-                //'rgba(255, 206, 86, 0.2)'],
-                //borderColor: ['rgb(255, 99, 132)',
-                //'rgba(54, 162, 235, 0.2)',
-                //'rgba(255, 206, 86, 0.2)'],
-                // data: [data_from_file["x"], data_from_file["y"], data_from_file["z"]]
-            //}//]
-        }, 
+        data: {
+            labels: ['Sum of vehicular stops', 'total arrests', 'average of vehicular arrests'],
+            datasets: [{
+                label: 'Vehicular stops',
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+                data: [data_from_file["x"], data_from_file["y"], data_from_file["z"]],
+            }]
+        },
 
         // Configuration options go here
-        //options: {}
+        options: {
+        scales: {
+                
+            }
+        }
     });
 
-// })
+})
 
 </script>
