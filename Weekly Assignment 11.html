@@ -1,0 +1,257 @@
+<html class="reveal-full-page"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+		<title>Weekly Assignment 11</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+	<style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style></head>
+	<body class="reveal-viewport" style="--slide-width:960px; --slide-height:700px;">
+		<div class="reveal slide center focused has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="cursor: none;">
+			<div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(0.994);">
+				<section style="top: 91.5px; display: block;" class="present" data-transition="zoom">
+					<h1>Weekly Assignment 11!</h1>
+					<p style="font-weight:bold;">How to add Vega Visualizations!</p>
+
+					<img src="https://media1.giphy.com/media/n8eU11XoQkuI0/200w.gif">
+				</section>
+
+
+				
+				<section style="top: 323px; display: block;" hidden="" aria-hidden="true" class="future" data-transition="fade-out">
+				  <section>
+				  	<h2>What Are Vega Visualizations?</h2>
+				  	<ul>
+				  		<li>Useful visualizations for everyone to use!</li>
+				  		<li>They are easy and fun to use!</li>
+				  		<li>Easy to implement into your presentations!</li>
+				  		<li>They are super customizable!</li>
+				  	</ul>
+				  	<p>
+				  		
+				  	</p>
+				  	<ul>The datasets Used:
+					  	<li>Useful visualizations for everyone to use!</li>
+					  	<li>They are easy and fun to use!</li>
+				  	
+				  	</ul>
+				  </section>
+				  
+				  <section>
+				  	<h3>Example of Vega Visualizations</h3>
+				  	<div id="vis"></div>
+					<script type="text/javascript">
+						
+						var spec = {
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						    "view": {
+						      "continuousHeight": 600,
+						      "continuousWidth": 800
+						    }
+						  },
+						  "width": 800,
+						  "height": 600,
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+						  },
+						  "encoding": {
+						    "color": {
+						      "field": "Origin",
+						      "type": "nominal"
+						    },
+						    "x": {
+						      "field": "Horsepower",
+						      "type": "quantitative"
+						    },
+						    "y": {
+						      "field": "Miles_per_Gallon",
+						      "type": "quantitative"
+						    }
+						  },
+						  "mark": "point"
+						};  /* JSON dump of your chart's spec */
+						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+						vegaEmbed("#vis", spec, opt);
+					</script>
+				</section>
+
+				<section>
+					<div id="vis1"></div>
+					<script type="text/javascript">
+					var spec = {
+						  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+						  "config": {
+						    "view": {
+						      "continuousHeight": 600,
+						      "continuousWidth": 800
+						    }
+						  },
+						  "width": 800,
+						  "height": 600,
+						  "data": {
+						    "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/crimea.json"
+						  },
+						  "encoding": {
+						   
+						    "x": {
+						      "field": "date",
+						      "type": "ordinal"
+						    },
+						    "y": {
+						      "field": "wounds",
+						      "type": "quantitative"
+						    }
+						  },
+						  "mark": "bar"
+						};
+						var opt = {"renderer": "canvas", "actions": false};
+						vegaEmbed("#vis1", spec, opt)
+	
+						</script>		
+					</section>
+
+
+					
+				  	
+				  </section>
+				</section>
+								
+
+				<section style="top: 323px; display: block;" hidden="" aria-hidden="true" class="future" data-transition="convex">
+				  <section>
+				  	<h2>How to Implement Vega</h2>
+				  	
+				  	<p>Here is some codeblock to show you how to implement Vega Visualizations!</p>
+					
+				  </section>
+				  
+				  <section>
+				  	<h3>First Steps to adding Vega Visualizations!</h3>
+					<pre><code class="html" data-trim data-line-numbers=1,2,16|3-7|4-6|8-15|11|12|9,13><script type="text/template">
+							<!DOCTYPE html>
+							<html>
+							<head>
+								<script src="https://cdn.jsdelivr.net/npm/vega@3">< /script>
+								<script src="https://cdn.jsdelivr.net/npm/vega-lite@2">< /script>
+								<script src="https://cdn.jsdelivr.net/npm/vega-embed@3">< /script>
+							</head>
+							<body>
+								<div id="vis"></div>
+								<script type="text/javascript">
+									var spec = {};  /* JSON dump of your chart's spec */
+									var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+									vegaEmbed("#vis", spec, opt);
+								< /script>
+							</body>
+							</html>
+					</script></code></pre>
+				  </section>
+
+				  <section>
+				  	<h3>Second Step</h3>
+				  		<pre><code data-trim data-line-numbers class="js">
+							{
+							  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+							  "config": {
+							    "view": {
+							      "continuousHeight": 300,
+							      "continuousWidth": 400
+							    }
+							  },
+							  "data": {
+							    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+							  },
+							  "encoding": {
+							    "color": {
+							      "field": "Origin",
+							      "type": "nominal"
+							    },
+							    "x": {
+							      "field": "Horsepower",
+							      "type": "quantitative"
+							    },
+							    "y": {
+							      "field": "Miles_per_Gallon",
+							      "type": "quantitative"
+							    }
+							  },
+							  "mark": "point"
+							};
+						</code></pre>
+					<p>Make sure to add this block of code above right in between the two "{}" where is says "var Spec = {}" on the slide prior to this one that has the first block of code.</p>
+				  </section>
+				</section>
+
+				<section style="top: 323px; display: block;" hidden="" aria-hidden="true" class="future" data-transition="fade-out">
+				  <section>
+				  	<h2>Interpreting The Results From The 1st Graph!</h2>
+				  	
+				  	<ul> Based off the first graph that I created we can determine:
+				  		<li>The U.S. has the most cars with the greatest horse power!</li>
+				  		<li>Europe has the most cars with the least amount of horse power!</li>
+				  		<li>Japan has a car with the most miles per gallon, most gas efficient!</li>
+				  		<li>The U.S. takes the cake for the least gas efficient cars!</li>
+				  	</ul>
+
+				  	
+				  </section>
+				  
+				  <section>
+				  	<h3>Interpreting The Results From The Second Graph!</h3>
+				  	<ul> Based off the Second graph that I created we can determine:
+				  		<li>The most amount of wounds occurred during the year of 1854!</li>
+				  		<li>About 475 wounds seems to the max amount in the dataset!</li>
+				  		<li>The least amount of wounds occurred in 1854 of August!</li>
+				  		<li>The least amount of wounds were  somewhere between 0-10!</li>
+				  	</ul>
+					 
+				  	</section>
+				  
+
+				 
+
+				
+
+			</div>
+		<div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-number" style="display: none;"></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Big header Custom text styles </div></div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	
+
+</body></html>
