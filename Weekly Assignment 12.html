@@ -1,0 +1,309 @@
+<html class="reveal-full-page"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<!-- Loading Vega-->
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+		<title>Weekly Assignment 12</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+	<style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style></head>
+	<body class="reveal-viewport" style="--slide-width:960px; --slide-height:700px;">
+		<div class="reveal slide center focused has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade" style="cursor: none;">
+			<div class="slides" style="width: 960px; height: 700px; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(0.994);">
+				<section style="top: 91.5px; display: block;" class="present" data-transition="zoom">
+					<h1>Weekly Assignment 12!</h1>
+					<p style="font-weight:bold;">How to add Vega Visualizations!</p>
+
+					<img src="https://media1.giphy.com/media/n8eU11XoQkuI0/200w.gif">
+				</section>
+
+
+				
+				
+				  
+				  <section>
+				  	<h3>First Visualization</h3>
+				  	<div id="vis-seattle-weather"></div>
+					<script type="text/javascript">
+						
+						var spec = {
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						  	"font":"cursive",
+						    "view": {
+						      "continuousHeight": 500,
+						      "continuousWidth": 800
+						    }
+						  },
+						  "width": 1000,
+						  "height": 500,
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/seattle-weather.csv"
+						  },
+						  "layer":[{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"temp_max",
+										"type":"quantitative"
+										
+									},
+									"color": {"value":"red"}
+								}
+							},{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"temp_min",
+										"type":"quantitative"
+									},
+									"color": {"value":"green"}
+								},
+
+							},{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"precipitation",
+										"type":"quantitative"
+									},
+									"color": {"value":"blue"}
+								}
+							}]
+						};
+						var opt = {"renderer": "canvas", "actions": false};
+						vegaEmbed("#vis-seattle-weather", spec, opt);
+
+
+
+
+						  
+					</script>
+				</section>
+				
+				<section>
+
+						<h3>Second Visualization</h3>
+
+						<div id="vis-stocks"></div>
+						<script type="text/javascript">
+							var spec = {
+								"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+								
+						    				
+								"width": 500,
+								"height": 400,
+								"data": {"url": "https://vega.github.io/vega-datasets/data/stocks.csv"},
+								  "mark": "line",
+								  "encoding": {
+								    "x": {"field": "date", "type": "temporal"},
+								    "y": {"field": "price", "type": "quantitative"},
+								    "color": {"field": "symbol", "type": "nominal"}
+  								}
+								
+							};
+							var opt = {"renderer": "canvas", "actions": false};
+							vegaEmbed("#vis-stocks", spec, opt);
+							</script>
+
+							<p>This visualization uses layering</p>
+									
+					</section>
+
+
+					
+				  	
+				
+								
+
+				<section style="top: 323px; display: block;" hidden="" aria-hidden="true" class="future" data-transition="convex">
+				  <section>
+				  	<h2>Code Blocks For My Visualizations</h2>
+				  	
+				
+					
+				  </section>
+				  
+				  <section>
+				  	<h3>First Steps to adding Vega Visualizations!</h3>
+					<pre><code data-line-numbers= "1-10|11-21|22-32|33-43|44-58">
+							{
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						  	"font":"cursive",
+						    "view": {
+						      "continuousHeight": 500,
+						      "continuousWidth": 800
+						    }
+						  },
+						  "width": 1000,
+						  "height": 500,
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/seattle-weather.csv"
+						  },
+						  "layer":[{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"temp_max",
+										"type":"quantitative"
+										
+									},
+									"color": {"value":"red"}
+								}
+							},{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"temp_min",
+										"type":"quantitative"
+									},
+									"color": {"value":"green"}
+								},
+
+							},{
+								"mark": "line",
+								"encoding":{
+									"x":{
+										"field":"date",
+										"type":"temporal"
+									},
+									"y":{
+										"field":"precipitation",
+										"type":"quantitative"
+									},
+									"color": {"value":"blue"}
+								}
+							}]
+						};
+					</script></code></pre>
+				  </section>
+
+				  <section>
+				  	<h3>Second Step</h3>
+				  		<pre><code data-trim data-line-numbers class="js">
+							{
+								"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+								
+						    				
+								"width": 500,
+								"height": 400,
+								"data": {"url": "https://vega.github.io/vega-datasets/data/stocks.csv"},
+								  "mark": "line",
+								  "encoding": {
+								    "x": {"field": "date", "type": "temporal"},
+								    "y": {"field": "price", "type": "quantitative"},
+								    "color": {"field": "symbol", "type": "nominal"}
+  								}
+								
+							};
+						</code></pre>
+					
+				  </section>
+				</section>
+
+				<section style="top: 323px; display: block;" hidden="" aria-hidden="true" class="future" data-transition="fade-out">
+				  <section>
+				  	<h2>Interpreting The Results From The 1st Graph!</h2>
+				  	
+				  	<ul> Based off the first graph that I created we can determine:
+				  		<li>The higheset temperature that Seattle experienced was 37 degrees Celsius in August of 2014!</li>
+				  		<li>The lowest temperature that Seattle experienced was -8 degrees Celsius in December of 2013!</li>
+				  		<li>The highest amount of precipitation that Seattle experienced was in March of 2015!</li>
+				  		
+				  	</ul>
+
+				  	
+				  </section>
+				  
+				  <section>
+				  	<h3>Interpreting The Results From The Second Graph!</h3>
+				  	<ul> Based off the Second graph that I created we can determine:
+				  		<li>Google has the highest stock value out of all the companies!</li>
+				  		<li>MSFT has the lowest stock value out of all the companies!</li>
+				  		<li>Google's stock fluctuates the most out of all the companies!</li>
+				  		<li>Apples stock grows the most out of all the stocks!</li>
+				  	</ul>
+					 
+				  	</section>
+				  
+
+				 
+
+				
+
+			</div>
+		<div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-number" style="display: none;"></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Big header Custom text styles </div></div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	
+
+</body></html>
